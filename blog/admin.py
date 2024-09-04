@@ -1,6 +1,11 @@
 from django.contrib import admin
 
-from .models import Featured, Tag, Category
+from .models import Featured, Tag, Category, Post, File
+
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ("pk", "title", "user", "created_at")
 
 
 @admin.register(Featured)
@@ -16,3 +21,7 @@ class TagAdmin(admin.ModelAdmin):
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['pk', 'title', 'icon', 'order']
+
+
+
+admin.site.register(File)
