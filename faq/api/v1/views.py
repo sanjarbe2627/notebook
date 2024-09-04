@@ -1,12 +1,8 @@
 from rest_framework import generics
-from rest_framework.response import Response
-from rest_framework.pagination import PageNumberPagination
-from rest_framework.mixins import ListModelMixin, UpdateModelMixin, DestroyModelMixin, RetrieveModelMixin
-from rest_framework import status
 
 from base.utils.pagination import CustomPagination
 from .serializers import QuestionSerializer
-from ...models import Question, Answer
+from ...models import Question
 
 
 class QuestionListView(generics.ListAPIView):

@@ -1,5 +1,3 @@
-from json.decoder import NegInf
-
 from rest_framework import serializers
 
 from ...models import Question, Answer

@@ -57,6 +57,12 @@ class Featured(models.Model):
     """ Partner brands """
     title = models.CharField(max_length=255, null=True, blank=True)
     icon = models.ImageField(upload_to='featured', null=False, blank=False)
+    order = models.IntegerField(default=0, null=False)
 
     def __str__(self):
         return self.title or f"#{self.pk}"
+
+
+    class Meta:
+        verbose_name_plural = "Featured"
+        ordering = ['order']
